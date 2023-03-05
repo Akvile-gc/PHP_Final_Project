@@ -1,5 +1,25 @@
+h1 {
+    text-align: center;
+}
+
 .form {
     padding: 1rem 25rem;
     display: flex;
     justify-content: space-evenly;
+}
+
+.button_section {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid cornflowerblue;
+    border-radius: 15px;
+    text-decoration: none;
+    color: cornflowerblue;
+    background: floralwhite;
+
 }

@@ -17,7 +17,7 @@ class Router
         $newBookController = $this->container->get(NewBookController::class);
 
         if($path === '/knyga' && $method === 'GET'){
-            $newBookController->set(); //getting the initial form to add books
+            $newBookController->set(); //getting the form to add books
         } elseif ($path === '/knyga' && $method === 'POST') {
             $newBookController->add(); //adding new book
         }

@@ -13,7 +13,7 @@
         <h1>Pridėkite naują knygą</h1>
 
         <div class="form_main">
-            <form action="" method="POST">
+            <form action="./knyga.php" method="POST">
                 <div class="form">
                     <label for="name">Knygos pavadinimas</label>
                     <input type="text" name="name" id="name">
@@ -35,10 +35,23 @@
                     <input type="number" name="copies" id="copies">
                 </div>
                 <div class="form">
-                    <input type="submit" name="new_book" id="new_book" value="Pridėti">
+                    <input type="submit" name="new_book" id="new_book" value="Pridėti" class="button">
                 </div>
             </form>
+        </div>
+        <div>
+            <p></p>
+<!--            should include the message in p - if it's correct, it should say that the book was added correctly,
+                if not - that person should enter the correct data-->
 
+        </div>
+        <div class="button_section">
+            <a href="./knyga" class="button">Nauja knyga</a>
+            <a href="./redagavimas" class="button">Knygos redagavimas</a>
+            <a href="./visos_knygos" class="button">Visos knygos</a>
+            <a href="./istrynimas" class="button">Knygos ištrynimas</a>
+            <a href="./rezervacija.php" class="button">Knygos rezervacija</a>
+            <a href="./paieska.php" class="button">Knygos paieška</a>
         </div>
 
     </div>

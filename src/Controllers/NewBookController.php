@@ -16,6 +16,18 @@ class NewBookController
         require __DIR__ . "/../../views/knyga.php";  //getting initial form to fill in
     }
 
+
+    public function add(){
+        $name = $_POST['name'];
+        $author = $_POST['author'];
+        $year = $_POST['year'];
+        $language = $_POST['language'];
+        $copies = $_POST['copies'];
+
+
+
+
+    }
 /*
     public function add()
     {
