@@ -17,7 +17,8 @@ class NewBookController
     }
 
 
-    public function add(){
+    public function add()
+    {
         $name = $_POST['name'];
         $author = $_POST['author'];
         $year = $_POST['year'];

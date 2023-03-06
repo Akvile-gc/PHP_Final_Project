@@ -10,7 +10,7 @@ class BookModel
         private string $author,
         private int $year,
         private string $language,
-        private int $copiesAvailable)
+        private int $copies)
     {
     }
     public function getId():int {
@@ -33,7 +33,7 @@ class BookModel
         return $this->language;
     }
 
-    public function getCopiesAvailable():int {
-        return $this->copiesAvailable;
+    public function getCopies():int {
+        return $this->copies;
     }
 }
