@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace PHP_Final_Project\Controllers;
+namespace PHP_Final_Project\Controllers\BookControllers;
 
 use PHP_Final_Project\Frameworks\DIContainer;
 

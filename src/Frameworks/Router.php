@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace PHP_Final_Project\Frameworks;
 
 
-use PHP_Final_Project\Controllers\NewBookController;
+use PHP_Final_Project\Controllers\BookControllers\NewBookController;
 
 class Router
 {

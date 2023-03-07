@@ -13,7 +13,7 @@
         <h1>Pridėkite naują knygą</h1>
 
         <div class="form_main">
-            <form action="./knyga.php" method="POST">
+            <form action="./knyga" method="POST">
                 <div class="form">
                     <label for="name">Knygos pavadinimas</label>
                     <input type="text" name="name" id="name">
@@ -31,7 +31,7 @@
                     <input type="text" name="language" id="language">
                 </div>
                 <div class="form">
-                    <label for="copies">Leidimo metai</label>
+                    <label for="copies">Vienetų skaičius</label>
                     <input type="number" name="copies" id="copies">
                 </div>
                 <div class="form">
@@ -40,7 +40,7 @@
             </form>
         </div>
         <div>
-            <p></p>
+            <p><?php echo $message ?></p>
 <!--            should include the message in p - if it's correct, it should say that the book was added correctly,
                 if not - that person should enter the correct data-->
 
