@@ -3,9 +3,8 @@ declare(strict_types = 1);
 
 namespace PHP_Final_Project\Controllers\DataControllers;
 
+use PHP_Final_Project\Controllers\ErrorMessageController;
 use PHP_Final_Project\Frameworks\DIContainer;
-use PHP_Final_Project\Models\BookException;
-use PHP_Final_Project\Models\MessageModels\ErrorMessage;
 
 class DataValidatorController
 {
@@ -17,14 +16,13 @@ class DataValidatorController
     public function validate()
     {
 //        $exception = $this->container->get(BookException::class);
-        $error = $this->container->get(ErrorMessage::class); //getting the error messages
+        $error = $this->container->get(ErrorMessageController::class); //getting the error messages
 
         $name = $_POST['name'];
         $author = $_POST['author'];
         $year = $_POST['year'];
         $language = $_POST['language'];
         $copies = $_POST['copies'];
-
 
         if (preg_match('/([a-z A-Z])/', $name)){
             if (preg_match('/([a-z A-Z])/', $author)){
@@ -33,7 +31,7 @@ class DataValidatorController
                         if (preg_match(('/(\d+)/'), $copies)){
                             return true;
                         } else {
-                            throw new \Exception($error->wronCopies());
+                            throw new \Exception($error->wrongCopies());
 //                            throw $exception($error->wrongCopies());
                         }
                     } else {

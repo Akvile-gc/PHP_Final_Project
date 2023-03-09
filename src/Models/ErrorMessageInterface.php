@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PHP_Final_Project\Models\MessageModels;
+namespace PHP_Final_Project\Models;
 interface ErrorMessageInterface
 {
     public function wrongName():string;

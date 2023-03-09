@@ -16,6 +16,7 @@ class NewBookController
 
     public function set()
     {
+        $message = '';
         require __DIR__ . './../../../views/knyga.php';  //getting initial form to fill in
     }
 
