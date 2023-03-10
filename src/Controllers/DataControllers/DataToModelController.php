@@ -39,7 +39,7 @@ class DataToModelController
                 'copies'=>$newBook->getCopies()
             ];
             $existingBooks[] = $book; //inserting new book to the books array
-        } elseif (!empty($existingBooks)) {
+        } else {
             foreach ($existingBooks as $key => $book) {
                 /* check if there are any other books by the same author, name, release year and language.
                       if(true) - add number of copies to available copies
@@ -50,20 +50,21 @@ class DataToModelController
                     $existingBooks[$key]['year'] === $year &&
                     $existingBooks[$key]['language'] === $language) {
                     $existingBooks[$key]["copies"] += $copies;
+                    break;
+                } else {
+                    $id = count($existingBooks);
+                    $newBook = new BookModel($id, $name, $author, $year, $language, $copies);
+                    $book = [
+                        'id'=>$newBook->getId(),
+                        'name'=>$newBook->getName(),
+                        'author'=>$newBook->getAuthor(),
+                        'year'=>$newBook->getYear(),
+                        'language'=>$newBook->getLanguage(),
+                        'copies'=>$newBook->getCopies(),
+                    ];
+                    $existingBooks[] = $book; //inserting new book to the books array
                 }
             }
-        } else {
-            $id = count($existingBooks);
-            $newBook = new BookModel($id, $name, $author, $year, $language, $copies);
-            $book = [
-                'id'=>$newBook->getId(),
-                'name'=>$newBook->getName(),
-                'author'=>$newBook->getAuthor(),
-                'year'=>$newBook->getYear(),
-                'language'=>$newBook->getLanguage(),
-                'copies'=>$newBook->getCopies(),
-            ];
-            $existingBooks[] = $book; //inserting new book to the books array
         }
         $encode->enterData($location, $existingBooks); //encoding new data
     }
