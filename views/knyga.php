@@ -47,10 +47,7 @@
         </div>
         <div class="button_section">
             <a href="./knyga" class="button">Nauja knyga</a>
-            <a href="./redagavimas" class="button">Knygos redagavimas</a>
             <a href="./visos_knygos" class="button">Visos knygos</a>
-            <a href="./istrynimas" class="button">Knygos ištrynimas</a>
-            <a href="./rezervacija.php" class="button">Knygos rezervacija</a>
             <a href="./paieska.php" class="button">Knygos paieška</a>
         </div>
 
