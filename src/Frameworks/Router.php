@@ -6,6 +6,7 @@ namespace PHP_Final_Project\Frameworks;
 
 use PHP_Final_Project\Controllers\BookControllers\BookEditController;
 use PHP_Final_Project\Controllers\BookControllers\BookListController;
+use PHP_Final_Project\Controllers\BookControllers\BookSearchController;
 use PHP_Final_Project\Controllers\BookControllers\NewBookController;
 use PHP_Final_Project\Controllers\BookControllers\BookDeletionController;
 
@@ -30,18 +31,16 @@ class Router
         } elseif ($path === '/visos_knygos' && $method === 'GET') {
             $bookListController->getBookList(); //
         } elseif ($path === '/visos_knygos' && $method === 'POST') {
-            $bookEditController->editBook();
-
-//            $bookDeletionController->deleteBook();
+            if (isset($_POST['id'])){ //if the user press the button to edit the book, we are doing the logic bellow
+                $bookEditController->getBook();
+            }
+            if (isset($_POST['idDelete'])){ //if the user press the button to delete the book, we are doing the logic bellow
+                $bookDeletionController->getBook();
+            }
+        } elseif ($path ==='/redagavimas' && $method === 'POST'){
+            $bookEditController->changeBook();
+        } elseif ($path ==='/istrynimas' && $method === 'POST'){
+            $bookDeletionController->changeBook();
         }
-
-//    } elseif ($path === '/form' && $method === 'POST') {
-//$taxController->add(); //adding data
-//} elseif ($path === '/data_entered' && $method === 'POST') {
-//$taxController->countTotal(); //counting total
-//} elseif ($path === '/total' && $method === 'POST') {
-//$totalController->pay(); //paying
-//}
-
     }
 }
