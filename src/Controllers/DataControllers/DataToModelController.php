@@ -5,6 +5,7 @@ namespace PHP_Final_Project\Controllers\DataControllers;
 
 use PHP_Final_Project\Frameworks\DIContainer;
 use PHP_Final_Project\Models\BookModel;
+use PHP_Final_Project\Repositories\BookRepository;
 
 class DataToModelController
 {
@@ -14,10 +15,8 @@ class DataToModelController
     }
     public function changeData()
     {
-        $location = 'D:\CodeAcademy\Back End\PHP\PHP_Final_Project\src\DataBase\books.json';
-
-        $decode = $this->container->get(DataExtractionController::class);
-        $existingBooks = $decode->extractData($location);
+        $repository = $this->container->get(BookRepository::class);
+        $existingBooks = $repository->getAll();
 
         $encode = $this->container->get(DataEntryController::class);
 
@@ -55,12 +54,6 @@ class DataToModelController
                     $entered = true;
                     break;
                 }
-//                if ($existingBooks[$key]['name'] !== $name &&
-//                    $existingBooks[$key]['author'] !== $author &&
-//                    $existingBooks[$key]['year'] !== $year &&
-//                    $existingBooks[$key]['language'] !== $language) {
-//
-//                }
             }
             if ($entered !== true){
                 $id = count($existingBooks);
@@ -76,6 +69,6 @@ class DataToModelController
                 $existingBooks[] = $book; //inserting new book to the books array
             }
         }
-        $encode->enterData($location, $existingBooks); //encoding new data
+        $encode->enterData('D:\CodeAcademy\Back End\PHP\PHP_Final_Project\src\DataBase\books.json', $existingBooks); //encoding new data
     }
 }
