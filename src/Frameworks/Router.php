@@ -22,12 +22,12 @@ class Router
         $bookListController = $this->container->get(BookListController::class);
         $bookEditController = $this->container->get(BookEditController::class);
         $bookDeletionController = $this->container->get(BookDeletionController::class);
-
+        $bookSearchController = $this->container->get(BookSearchController::class);
 
         if($path === '/knyga' && $method === 'GET'){
-            $newBookController->set(); //getting the form to add books
+            $newBookController->get(); //getting the form to add books
         } elseif ($path === '/knyga' && $method === 'POST') {
-            $newBookController->add(); //adding new book
+            $newBookController->action(); //adding new book
         } elseif ($path === '/visos_knygos' && $method === 'GET') {
             $bookListController->getBookList(); //
         } elseif ($path === '/visos_knygos' && $method === 'POST') {
@@ -41,6 +41,10 @@ class Router
             $bookEditController->changeBook();
         } elseif ($path ==='/istrynimas' && $method === 'POST'){
             $bookDeletionController->changeBook();
+        } elseif ($path === '/paieska' && $method === 'GET'){
+            $bookSearchController->get();
+        } elseif ($path === '/paieska' && $method === 'POST'){
+            $bookSearchController->action();
         }
     }
 }
