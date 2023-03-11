@@ -8,10 +8,20 @@
     <title>Knygos ištrynimas</title>
 </head>
 <body>
-    <h1>Jūs ištrynėte knygą:</h1>
-    <p><?php print_r($books[$id]) ?></p>
-<!--    Maybe enter the book details-->
-    <br>
+    <form method="POST" action="./istrynimas">
+        <legend>Patvirtinkite knygos ištrynimą:</legend>
+        <input type="hidden" name="idDelete" value="<?php echo $delete?>">
+        <p>
+            <?php echo
+                $books[$delete]['name'] . ' ' .
+                $books[$delete]['author'] . ' ' .
+                $books[$delete]['year'] . ' ' .
+                $books[$delete]['language'] . ' ' .
+                $books[$delete]['copies']
+            ?>
+        </p>
+        <input type="submit" name="delete" id="delete" value="Ištrinti">
+    </form>
     <button>
         <a href="./visos_knygos">Knygų sąrašas</a>
     </button>

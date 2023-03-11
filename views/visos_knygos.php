@@ -22,7 +22,6 @@
             </tr>
             </thead>
             <tbody>
-            <?php $total = 0?>
             <?php foreach ($bookList as $key => $book):?>
                     <tr>
                         <td><?php echo $book['id'] ?></td>
@@ -32,26 +31,20 @@
                         <td><?php echo $book['language'] ?></td>
                         <td><?php echo $book['copies'] ?></td>
                         <td>
-                            <form method="POST" action="./redagavimas" class="inside_buttons">
-                                <input type="hidden" name="id" value="<?php echo $key['id'] ?>">
+                            <form method="POST" action="./visos_knygos" class="inside_buttons">
+                                <input type="hidden" name="id" value="<?php echo $key ?>">
                                 <input type="submit" value="Redaguoti">
                             </form>
                         </td>
-<!--                        <td>-->
-<!--                            <form method="POST" action="./istrynimas" class="inside_buttons">-->
-<!--                                <input type="hidden" name="id" value="--><?php //echo $key ?><!--">-->
-<!--                                <input type="submit" value="Ištrinti">-->
-<!--                            </form>-->
-<!--                        </td>-->
+                        <td>
+                            <form method="POST" action="./visos_knygos" class="inside_buttons">
+                                <input type="hidden" name="idDelete" value="<?php echo $key ?>">
+                                <input type="submit" value="Ištrinti">
+                            </form>
+                        </td>
                     </tr>
             <?php endforeach; ?>
             </tbody>
-    <!--        <tfoot>-->
-    <!--        <tr style="font-weight: bold">-->
-    <!--            <td colspan="4">Total</td>-->
-    <!--            <td>--><?php //echo $total?><!--</td>-->
-    <!--        </tr>-->
-    <!--        </tfoot>-->
         </table>
 
         <!--        needs to change tax details to PAID-->
