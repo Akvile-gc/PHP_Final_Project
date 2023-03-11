@@ -40,6 +40,8 @@ class DataToModelController
             ];
             $existingBooks[] = $book; //inserting new book to the books array
         } else {
+            $entered = false;
+
             foreach ($existingBooks as $key => $book) {
                 /* check if there are any other books by the same author, name, release year and language.
                       if(true) - add number of copies to available copies
@@ -50,20 +52,28 @@ class DataToModelController
                     $existingBooks[$key]['year'] === $year &&
                     $existingBooks[$key]['language'] === $language) {
                     $existingBooks[$key]["copies"] += $copies;
+                    $entered = true;
                     break;
-                } else {
-                    $id = count($existingBooks);
-                    $newBook = new BookModel($id, $name, $author, $year, $language, $copies);
-                    $book = [
-                        'id'=>$newBook->getId(),
-                        'name'=>$newBook->getName(),
-                        'author'=>$newBook->getAuthor(),
-                        'year'=>$newBook->getYear(),
-                        'language'=>$newBook->getLanguage(),
-                        'copies'=>$newBook->getCopies(),
-                    ];
-                    $existingBooks[] = $book; //inserting new book to the books array
                 }
+//                if ($existingBooks[$key]['name'] !== $name &&
+//                    $existingBooks[$key]['author'] !== $author &&
+//                    $existingBooks[$key]['year'] !== $year &&
+//                    $existingBooks[$key]['language'] !== $language) {
+//
+//                }
+            }
+            if ($entered !== true){
+                $id = count($existingBooks);
+                $newBook = new BookModel($id, $name, $author, $year, $language, $copies);
+                $book = [
+                    'id'=>$newBook->getId(),
+                    'name'=>$newBook->getName(),
+                    'author'=>$newBook->getAuthor(),
+                    'year'=>$newBook->getYear(),
+                    'language'=>$newBook->getLanguage(),
+                    'copies'=>$newBook->getCopies(),
+                ];
+                $existingBooks[] = $book; //inserting new book to the books array
             }
         }
         $encode->enterData($location, $existingBooks); //encoding new data
