@@ -11,30 +11,30 @@ class ErrorMessageController implements ErrorMessageInterface {
     {
         // TODO: Implement wrongName() method.
 
-        return 'Jūs įvedėte klaidingą knygos pavadinimą.';
+        return 'Jūs įvedėte klaidingą knygos pavadinimą. Prašome įvesti raides.';
     }
 
     public function wrongAuthor(): string
     {
         // TODO: Implement wrongAuthor() method.
-        return 'Jūs įvedėte klaidingą knygos autorių.';
+        return 'Jūs įvedėte klaidingą knygos autorių. Prašome įvesti raides.';
     }
 
     public function wrongYear(): string
     {
         // TODO: Implement wrongYear() method.
-        return 'Jūs įvedėte klaidingus metus.';
+        return 'Jūs įvedėte klaidingus metus. Prašome įvesti metus šiuo formatu - xxxx. Metai turėtų prasidėti skaičiu 1 arba 2';
     }
 
     public function wrongLanguage(): string
     {
         // TODO: Implement wrongLanguage() method.
-        return 'Jūs įvedėte klaidingą knygos kalbą.';
+        return 'Jūs įvedėte klaidingą knygos kalbą. Prašome įvesti raides.';
     }
 
     public function wrongCopies(): string
     {
         // TODO: Implement wrongCopies() method.
-        return 'Jūs įvedėte klaidingą turimų knygų skaičių.';
+        return 'Jūs įvedėte klaidingą turimų knygų skaičių. Prašome įvesti skaičių.';
     }
 }
