@@ -16,23 +16,23 @@
             <form action="./knyga" method="POST">
                 <div class="form">
                     <label for="name">Knygos pavadinimas</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" placeholder="Nauja knyga">
                 </div>
                 <div class="form">
                     <label for="author">Autorius</label>
-                    <input type="text" name="author" id="author">
+                    <input type="text" name="author" id="author" placeholder="Vardas Pavardė">
                 </div>
                 <div class="form">
                     <label for="year">Leidimo metai</label>
-                    <input type="number" name="year" id="year">
+                    <input type="number" name="year" id="year" placeholder="xxxx">
                 </div>
                 <div class="form">
                     <label for="language">Kalba</label>
-                    <input type="text" name="language" id="language">
+                    <input type="text" name="language" id="language" placeholder="Kalba">
                 </div>
                 <div class="form">
                     <label for="copies">Vienetų skaičius</label>
-                    <input type="number" name="copies" id="copies">
+                    <input type="number" name="copies" id="copies" placeholder="x">
                 </div>
                 <div class="form">
                     <input type="submit" name="new_book" id="new_book" value="Pridėti" class="button">
@@ -48,7 +48,7 @@
         <div class="button_section">
             <a href="./knyga" class="button">Nauja knyga</a>
             <a href="./visos_knygos" class="button">Visos knygos</a>
-            <a href="./paieska.php" class="button">Knygos paieška</a>
+            <a href="./paieska" class="button">Knygos paieška</a>
         </div>
 
     </div>
