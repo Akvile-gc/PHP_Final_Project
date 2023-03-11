@@ -18,7 +18,7 @@ class NewBookController extends BookActionModel
 
     public function get()
     {
-        $message = '';
+        $message = ''; //so in the initial html form it wouldn't show an error
         require __DIR__ . './../../../views/knyga.php';  //getting initial form to fill in
     }
 
