@@ -46,15 +46,6 @@
             <?php endforeach; ?>
             </tbody>
         </table>
-
-        <!--        needs to change tax details to PAID-->
-    <!--    <div>-->
-    <!--        <form action="./total" method="POST">-->
-    <!--            <input type="submit" name="paid" id="paid" value="Deklaruoti ir sumokėti">-->
-    <!--        </form>-->
-    <!--    </div>-->
     </div>
-
-
 </body>
 </html>
