@@ -1,25 +1,138 @@
+html, body {
+    font-family: 'Kanit', sans-serif;
+    color: rgb(44,65,93);
+    background-color: antiquewhite;
+}
+
+/*header styles*/
+header {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+.header_wrap {
+    justify-items: center;
+    align-items: center;
+    display: inline-grid;
+}
+
+.logo{
+    grid-column: 1;
+}
+
+.logo a img {
+    width: 20%;
+}
+
+.nav {
+    grid-column: 2 / 5;
+}
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.nav ul li {
+    padding: 0 3rem;
+}
+
+.nav ul li a {
+    text-decoration: none;
+}
+
+/*text styles*/
 h1 {
+    margin: 0.5rem;
     text-align: center;
+    font-size: 30px;
+}
+
+ul li a:hover {
+    color: rgb(44,65,93);
+}
+
+p,
+label,
+legend {
+    font-size: 20px;
+}
+
+.hero_text {
+    color: antiquewhite;
+    font-size: 50px;
+    text-align: center;
+    line-height: 60vh;
+}
+
+/*hero styles*/
+.hero {
+    height: 80vh;
+    background: url(./../img/books-rey-seven-_nm_mZ4Cs2I-unsplash.jpg) no-repeat center / cover;
+    background-size: 100%;
+}
+
+
+/*form styles*/
+.form_main {
+    display: flex;
+    justify-content: center;
 }
 
 .form {
-    padding: 1rem 25rem;
-    display: flex;
-    justify-content: space-evenly;
+    padding: 0.5rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
-.button_section {
-    display: flex;
-    justify-content: space-evenly;
+input {
+    margin-bottom: 0.2rem;
+    margin-top: 0.1rem;
+    border: none;
+    border-radius: 5px;
 }
 
-.button {
+input[type=submit]{
+    color: antiquewhite;
     margin: 1rem;
-    padding: 1rem;
-    border: 1px solid cornflowerblue;
-    border-radius: 15px;
+    padding: 0.5rem;
+    border: 1px solid antiquewhite;
+    border-radius: 10px;
     text-decoration: none;
-    color: cornflowerblue;
-    background: floralwhite;
+    background: rgb(44,65,93);
+    width: 100px;
+}
 
+/*table styles*/
+.table_wrapper {
+    display: grid;
+    justify-content: center;
+}
+thead {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 1rem;
+}
+
+td {
+    padding: 0rem 1rem;
+    border-bottom: 1px solid rgb(44,65,93);
+    border-spacing: 0;
+}
+
+a {
+    color: rgb(85,85,85);
+}
+
+.text {
+    text-align: center;
+    color: rgb(209, 19, 70);
+}
+
+
+/*footer styles*/
+.copy {
+    text-align: center;
+    font-size: 12px;
 }
