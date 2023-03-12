@@ -35,9 +35,9 @@ class BookEditController implements BookChangeInterface
         // this logic bellow will allow to change the book's current values to the edited ones
         $books[$edit]['name'] = $_POST['edit_name'];
         $books[$edit]['author'] = $_POST['edit_author'];
-        $books[$edit]['year'] = $_POST['edit_year'];
+        $books[$edit]['year'] = (int)$_POST['edit_year'];
         $books[$edit]['language'] = $_POST['edit_language'];
-        $books[$edit]['copies'] = $_POST['edit_copies'];
+        $books[$edit]['copies'] = (int)$_POST['edit_copies'];
 
         //putting the edited information back to the database
         $entry = $this->container->get(DataEntryController::class);
