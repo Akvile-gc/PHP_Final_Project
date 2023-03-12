@@ -44,7 +44,12 @@ class Router
         } elseif ($path === '/paieska' && $method === 'GET'){
             $bookSearchController->get();
         } elseif ($path === '/paieska' && $method === 'POST'){
-            $bookSearchController->action();
+            if (isset($_POST['search_n'])){ //if the user searches the book by its name, we are doing the logic bellow
+                $bookSearchController->action();
+            }
+            if (isset($_POST['search_a'])){ //if the user searches the book by its author, we are doing the logic bellow
+                $bookSearchController->secondAction();
+            }
         }
     }
 }
