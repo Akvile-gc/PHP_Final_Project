@@ -9,6 +9,7 @@ use PHP_Final_Project\Controllers\BookControllers\BookListController;
 use PHP_Final_Project\Controllers\BookControllers\BookSearchController;
 use PHP_Final_Project\Controllers\BookControllers\NewBookController;
 use PHP_Final_Project\Controllers\BookControllers\BookDeletionController;
+use PHP_Final_Project\Controllers\InitialPageController;
 
 class Router
 {
@@ -18,13 +19,16 @@ class Router
 
     public function process(string $path, string $method)
     {
+        $initialPageController = $this->container->get(InitialPageController::class);
         $newBookController = $this->container->get(NewBookController::class);
         $bookListController = $this->container->get(BookListController::class);
         $bookEditController = $this->container->get(BookEditController::class);
         $bookDeletionController = $this->container->get(BookDeletionController::class);
         $bookSearchController = $this->container->get(BookSearchController::class);
 
-        if($path === '/knyga' && $method === 'GET'){
+        if($path === '/biblioteka' && $method === 'GET'){
+            $initialPageController->getNewPage();
+        } elseif ($path === '/knyga' && $method === 'GET'){
             $newBookController->get(); //getting the form to add books
         } elseif ($path === '/knyga' && $method === 'POST') {
             $newBookController->action(); //adding new book
