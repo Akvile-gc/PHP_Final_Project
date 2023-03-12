@@ -1,0 +1,16 @@
+{
+    "name": "akvile/php_final_project",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "PHP_Final_Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Akvile-gc",
+            "email": "akvile.gvildyte@gmail.com"
+        }
+    ],
+    "require": {}
+}
