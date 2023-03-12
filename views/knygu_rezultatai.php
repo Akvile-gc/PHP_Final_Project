@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Paieškos rezultatai</title>
+    <title>Knygu paieškos rezultatai</title>
 </head>
 <body>
     <div class="wrapper">
@@ -34,7 +34,7 @@
                 </tr>
             <?php endforeach; ?>
             <?php else:?>
-            <p>Rezultatų nėra.</p>
+                <p>Knygų pavadinimu <?php echo $nameSearch ?> neturime.</p>
             <?php endif;?>
             </tbody>
         </table>
